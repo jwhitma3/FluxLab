@@ -1,3 +1,30 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fluxlab"
+dynamic = ["version"]
+description = "Python GUI tool for emission line measurements"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Joshua C. Whitman", email = "jwhitma3@my.westga.edu" }
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-qt>=4.5.0",
+    "pytest-mock>=3.14.0",
+    "ruff>=0.15.0",
+]
+
+[tool.setuptools_scm]
+# Enables dynamic versioning read from git tags
+
 [tool.ruff]
 target-version = "py314"
 
@@ -6,3 +33,10 @@ select = ["E", "F", "W", "I", "D"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -v"
+testpaths = [
+    "tests",
+]
