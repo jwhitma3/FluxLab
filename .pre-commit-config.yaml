@@ -10,3 +10,12 @@ repos:
           - --use-current-year
           - --comment-style
           - "#"
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest
+        language: system
+        pass_filenames: false
+        stages: [pre-push]
