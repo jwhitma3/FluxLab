@@ -24,6 +24,10 @@ dev = [
     "ruff>=0.15.0",
 ]
 
+[tool.setuptools]
+packages = ["view", "model", "controller"]
+py-modules = ["main"]
+
 [tool.setuptools_scm]
 # Enables dynamic versioning read from git tags
 
