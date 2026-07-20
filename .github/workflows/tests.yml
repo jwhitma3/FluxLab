@@ -28,7 +28,10 @@ jobs:
     - name: Install Dependencies
       run: uv sync --all-extras
 
-    - name: Run Tests with Xvfb
-      uses: GabrielBB/xvfb-action@v1
+    - name: Setup Headless Display & Qt
+      uses: pyvista/setup-headless-display-action@v3
       with:
-        run: uv run pytest
+        qt: true
+
+    - name: Run Tests
+      run: uv run pytest
