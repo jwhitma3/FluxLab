@@ -2,3 +2,8 @@
 # SPDX-License-Identifier: MIT
 
 """Shared pytest fixtures for FluxLab tests."""
+
+
+def test_placeholder() -> None:
+    """Placeholder to test github workflows."""
+    assert True

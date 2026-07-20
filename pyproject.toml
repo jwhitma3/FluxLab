@@ -8,11 +8,13 @@ dynamic = ["version"]
 description = "Python GUI tool for emission line measurements"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = "MIT"
 authors = [
     { name = "Joshua C. Whitman", email = "jwhitma3@my.westga.edu" }
 ]
-dependencies = []
+dependencies = [
+    "pyside6>=6.11.1",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -24,6 +26,9 @@ dev = [
 
 [tool.setuptools_scm]
 # Enables dynamic versioning read from git tags
+
+[tool.uv]
+package = false
 
 [tool.ruff]
 target-version = "py314"
@@ -40,3 +45,4 @@ addopts = "-ra -v"
 testpaths = [
     "tests",
 ]
+pythonpath = ["."]
